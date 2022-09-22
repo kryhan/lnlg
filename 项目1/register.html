@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css" />
+</head>
+<body>
+<!--语义化标签-->
+<!--<div class="pageheader"></div> -->
+<header class="pageHeader">
+    用户注册
+</header>
+
+
+<section class="mainContent">
+    <form class="baseFrom">
+        <div>
+            <label>手机号码：<input class="inputText" type="text" name="phone" placeholder="手机号码" /> </label>
+        </div>
+        <div>
+            <label>密码：<input class="inputText" type="password" name="pass" placeholder="密码" /> </label>
+        </div>
+        <div>
+            <label>确认密码：<input class="inputText" type="password" name="repass" placeholder="确认密码" /> </label>
+        </div>
+        <div>
+            <label>用户名：<input class="inputText" type="username" name="username" placeholder="用户名" /> </label>
+        </div>
+        <div>性别：
+            <label class="rightAlign">
+                <label><input type="radio" name="gender" value="1" />男 </label>
+                <label><input type="radio" name="gender" value="0" />女 </label>
+            </label>
+        </div>
+
+        <input class="btn btn-block btn-success" type="submit" value="注册" />
+        <input class="btn btn-block btn-regular" data-href="./login.html" type="button" value="登录" />
+    </form>
+</section>
+
+<footer class="pageFooter">
+    <ul class="footNav">
+        <li>
+            <a href="./index.html">
+                <span class="fa fa-home"></span>
+                首页
+            </a>
+        </li>
+        <li>
+            <a href="./goods.html">
+                <span class="fa fa-compass"></span>
+                发现
+            </a>
+        </li>
+        <li>
+            <a href="./grderlist.html">
+                <span class="fa fa-file-text-o"></span>
+                订单
+            </a>
+        </li>
+        <li>
+            <a href="./login.html">
+                <span class="fa fa-user-o"></span>
+                我的
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+    window.onload = function(){
+        //给登录按钮绑定事件
+        if(!(oBtn = document.querySelector('[value="登录"]'))) return false;
+        oBtn.onclick = gotoPage;
+    };
+</script>
+</body>
+</html>
