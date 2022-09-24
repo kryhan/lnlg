@@ -4,8 +4,11 @@
     margin: 0;
     padding: 0;
 }
-header,section,footer.div{
+header,section,footer.div,p{
     display: block;
+}
+body{
+    position: relative;
 }
 .pageHeader{
     width: 100%;
@@ -19,11 +22,11 @@ header,section,footer.div{
     letter-spacing: 0.2em;
     position: fixed;/*遵守子绝对 父相对*/
     /*em针对上一层容器大小  rem针对根 容器大小*/
-
+    z-index: 9999;
 }
 .mainContent{
-    padding-top: 4rem;
-    padding-bottom: 4.666666rem;
+    padding-top: 5rem;
+    padding-bottom: 5.666666rem;
     height: 200vh;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -34,6 +37,7 @@ header,section,footer.div{
     font-size: 1.2rem;
     font-weight:600 ;
     border-radius: 0.5rem;
+    letter-spacing: 0.15em;
     border: none;
 }
 .btn:hover{
@@ -48,8 +52,8 @@ header,section,footer.div{
     color: white;
 }
 .btn-regular{
-    background-color:#666 ;
-    color: #000;
+    background-color:#DDD ;
+    color: #666;
 }
 .baseFrom>*{
     margin: 1rem 0;
@@ -59,6 +63,10 @@ header,section,footer.div{
     outline: none;
     width: 80%;
     float: right;
+    background-color: transparent;
+}
+.cartFooter{
+
 }
 /*
 input{
@@ -104,3 +112,126 @@ input:focus{
 .footNav a span{
     display: block;
 }
+
+
+
+
+/*businesslist.html*/
+
+.businessList{
+    list-style: none;
+}
+.businessList li{
+    display: block;
+    overflow: visible;
+    padding: 1em 0;
+}
+.businessList li::after{
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    clear: both;
+
+}
+
+.businessList  a{
+    text-decoration: none;
+    color: #333333;
+}
+.businessList a:link{color: #333333}
+.businessList a:hover{color: #111111}
+.businessList a:visited{color: #333333}
+.businessList a:active{color: #333333}
+.businessList p,.businessList h3,.businessList div{
+    margin: 0.5em 0;
+    color: #505051;
+}
+
+.businessList h3{font-size: 1.2em;color: black;}
+.businessList p{
+    width: 20vm;
+    float: left;
+    position: relative;
+    margin-right: 1em;
+}
+.businessList p>span{
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    background-color: rgba(255,0,0,1);
+    right: -0.75em;
+    top:-0.75em;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+
+}
+.businessList.col-3 h3,.businessList.col-3 div{
+    width: 40vw;
+    float: left;
+}
+.businessList h3,.businessList div{
+    width: 60vw;
+    float: left;
+}
+.businessList.col-3 p:last-child{
+    float: right;
+}
+.businessList img{
+    width: 20vw;
+    height: 20vw;
+}
+
+
+/*conter 那个加1减1 小组件*/
+
+.businessList.food .counter{
+    float: right;
+}
+.counter input{
+    display: inline-block;
+    width: 1.1em;
+    border:none;
+    outline: none;
+}
+.counter span{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+.counter .left{
+    background-color: gray;
+}
+.counter .right{
+    background-color: dodgerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

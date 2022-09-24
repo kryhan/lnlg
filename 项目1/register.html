@@ -27,7 +27,7 @@
             <label>确认密码：<input class="inputText" type="password" name="repass" placeholder="确认密码" /> </label>
         </div>
         <div>
-            <label>用户名：<input class="inputText" type="username" name="username" placeholder="用户名" /> </label>
+            <label>用户名：<input class="inputText" type="text" name="username" placeholder="用户名" /> </label>
         </div>
         <div>性别：
             <label class="rightAlign">
@@ -38,6 +38,9 @@
 
         <input class="btn btn-block btn-success" type="submit" value="注册" />
         <input class="btn btn-block btn-regular" data-href="./login.html" type="button" value="登录" />
+        <!--<a href="./login.html" class="btn btn-block btn-regular">登录</a>-->
+        <!-- hrdf只使用在a标签和link标签
+        自定义属性，推荐使用 data-开头-->
     </form>
 </section>
 
@@ -74,9 +77,15 @@
 <script>
     window.onload = function(){
         //给登录按钮绑定事件
+        //oBTN进行检测
         if(!(oBtn = document.querySelector('[value="登录"]'))) return false;
         oBtn.onclick = gotoPage;
+        //每个页面加载时 需要执行的操作，写在当前页面中
+        if(!(oUsername = document.querySelector('[name="username"]'))) return false;
+        oUsername.onkeyup = checkUsername;
+
     };
+
 </script>
 </body>
 </html>

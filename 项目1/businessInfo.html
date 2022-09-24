@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css" />
+</head>
+<body>
+<!--语义化标签-->
+<!--<div class="pageheader"></div> -->
+<header class="pageHeader">
+    商家信息
+</header>
+
+
+<section class="mainContent">
+    <ul class="businessList col-3">
+        <li>
+            <a href="#">
+                <p>
+                    <img src="./img/sj01.png" />
+                    <span>3</span>
+                </p>
+                <h3>万家饺子</h3>
+                <div>15元起送  |  3元配送</div>
+                <div>各种架子炒菜</div>
+                <p>数量</p>
+            </a>
+        </li>
+    </ul>
+    <ul class="businessList food">
+        <li>
+            <a href="#">
+                <p>
+                    <img src="./img/sp01.png" />
+                </p>
+                <h3>纯肉鲜肉（水饺）</h3>
+                <div>新鲜猪肉</div>
+                <div>¥15</div>
+                <div class="counter">
+                    <span class="left">-</span>
+                    <input type="text" value="0" placeholder="0" maxlength="2" />
+                    <span class="right">+</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+</section>
+
+<footer class="pageFooter">
+    <div>
+        <div>
+            <i class="fa fa-shopping-cart"></i>
+            <span>3</span>
+        </div>
+        <div>
+            12.88
+        </div>
+    </div>
+    <div>
+        主结算
+    </div>
+
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+
+    document.querySelector('.counter').onclick = function (event) {
+        let oInput = document.querySelector('.counter input');
+        console.log(oInput.value)
+        newvalue = parseInt(oInput.value);
+        if(event.target.getAttribute("class").indexOf("left") >=0 ){
+            oInput.value = newvalue - 1;
+        }
+        if(event.target.getAttribute("class").indexOf("right") >= 0){
+            oInput.value = newvalue + 1;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+    };
+</script>
+</body>
+</html>
