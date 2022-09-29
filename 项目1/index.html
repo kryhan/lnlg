@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css" />
 </head>
 <body>
 
+    <header class="pageHeader">
+       搜索框
+    </header>
+
+    <section class="mainContent">
+        <--分类列表开始-->
+        <ul class="typeList">
+            <li>
+                <img src="./img/dcfl01.png" />
+                <div>美食</div>
+            </li>
+        </ul>
+        <--分类列表结束-->
+        <button class="byName">按名称排序</button>
+        <--商户列表开始-->
+        <ul class="businessList">
+            <li>
+                <a href="#">
+                    <p>
+                        <img src="./img/sj01.png" />
+                        <span>3</span>
+                    </p>
+                    <h3>万家饺子</h3>
+                    <h5>4</h5>
+                    <h5>3.6</h5>
+                    <div>15元起送  |  3元配送</div>
+                    <div>各种架子炒菜</div>
+                </a>
+            </li>
+        </ul>
+        <--商户列表结束-->
+
+
+    </section>
+
+    <footer class="pageFooter">
+        <ul class="footNav">
+            <li>
+                <a href="./index.html">
+                    <span class="fa fa-home"></span>
+                    首页
+                </a>
+            </li>
+            <li>
+                <a href="./goods.html">
+                    <span class="fa fa-compass"></span>
+                    发现
+                </a>
+            </li>
+            <li>
+                <a href="./grderlist.html">
+                    <span class="fa fa-file-text-o"></span>
+                    订单
+                </a>
+            </li>
+            <li>
+                <a href="./login.html">
+                    <span class="fa fa-user-o"></span>
+                    我的
+                </a>
+            </li>
+        </ul>
+    </footer>
+<!--<button style="color: black" onclick="gotoPage()"> </button>-->
+<script src="./js/main.js"></script>
+<script>
+    window.onload=function () {
+        getTypes();
+        getAllBusiness();
+        //获取所有类别列表，并渲染
+        bisinessListIndex()
+        document.querySelector(".byName").onclick = sortData;
+        }
+    }
+</script>
 </body>
 </html>

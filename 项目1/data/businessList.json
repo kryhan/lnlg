@@ -1,7 +1,7 @@
 {
   "lists": [
     {
-      "imgsrc":"./img/sj01.png",
+      "imgSrc":"./img/sj01.png",
       "title":"万家饺子1",
       "role": ["￥15元起送 ","￥3元配送"],
       "description": "各种饺子炒菜",
@@ -9,7 +9,7 @@
       "url": "./businessInfo.html"
     },
     {
-      "imgsrc":"./img/sj02.png",
+      "imgSrc":"./img/sj02.png",
       "title":"万家饺子2",
       "role": ["￥15元起送 "],
       "description": "各种饺子炒菜",
@@ -17,7 +17,7 @@
       "url": "./businessInfo.html"
     },
     {
-      "imgsrc":"./img/sj03.png",
+      "imgSrc":"./img/sj03.png",
       "title":"万家饺子3",
       "role": ["￥3元配送"],
       "description": "各种饺子炒菜",
@@ -25,7 +25,7 @@
       "url": "./businessInfo.html"
     },
     {
-      "imgsrc":"./img/sj04.png",
+      "imgSrc":"./img/sj04.png",
       "title":"万家饺子4",
       "role": [],
       "description": "各种饺子炒菜",

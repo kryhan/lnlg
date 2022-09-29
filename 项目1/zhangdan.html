@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css" />
+</head>
+<body>
+
+
+<div>
+    烤翅
+    单价 <span>5</span>
+    数量： <input type="number" placeholder="0" />
+</div>
+<!--<button style="color: black" onclick="gotoPage()"> </button>-->
+<div class="display">
+    总价： <span>0</span>
+</div>
+
+<script>
+    let oInput =document.querySelector("input");
+    function dataDriver(event){
+        if(oInput.value<0){
+            oInput.value = 0;
+        }
+        if(oInput.value>99){
+            oInput.value = 99;
+        }
+
+        document.querySelector(".display span").innerHTML = oInput.value *5;
+    }
+    oInput.onkeydown = dataDriver;
+    oInput.onchange = dataDriver;
+    document.onchange =dataDriver;
+
+</script>
+<script>
+    window.onload=function () {
+
+    }
+</script>
+</body>
+</html>

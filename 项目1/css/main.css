@@ -10,6 +10,9 @@ header,section,footer.div,p{
 body{
     position: relative;
 }
+a{
+    text-decoration: none;
+}
 .pageHeader{
     width: 100%;
     height: 4rem;
@@ -113,6 +116,41 @@ input:focus{
     display: block;
 }
 
+/*index.html*/
+.typeList{
+    /*通用实现。list-style: none;*/
+    /*弹性盒子实现*/
+    display: flex;
+    flex-wrap: wrap;
+}
+/*让每个li占等宽距离*/
+
+
+@media screen and  (max-width: 200px) {
+    .typeList img {
+        width: 100%;
+    }
+}
+.typeList img{
+    width: 120px;
+}
+.typeList li{
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -185,11 +223,18 @@ input:focus{
     height: 20vw;
 }
 
-
+/*  businessList foods  */
+/*
+.businessList.foods ul{
+    display:flex;
+    align-items: center;
+}
+*/
 /*conter 那个加1减1 小组件*/
 
 .businessList.food .counter{
-    float: right;
+    flex: 1;
+    text-align: right;
 }
 .counter input{
     display: inline-block;
@@ -214,7 +259,7 @@ input:focus{
     background-color: dodgerblue;
 }
 
-
+/*结算栏*/
 
 
 

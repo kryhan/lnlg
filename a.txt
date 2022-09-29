@@ -1,0 +1,3 @@
+git add *   //添加到区
+git commit -m ‘备注’    //commit 版本
+git push     //上传

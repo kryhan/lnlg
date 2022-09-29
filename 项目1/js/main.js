@@ -50,7 +50,6 @@ function checkUsername(event){
     }
     return flag;
 }
-
 //获取所有商家数据
 function getAllBusiness(){
     getData('get','./data/businessList.json').then(function (myData) {
@@ -61,10 +60,12 @@ function getAllBusiness(){
                 <li>
                     <a href="${myData.lists[i].url}">
                         <p>
-                            <img src="${myData.lists[i].imgsrc}" />
+                            <img src="${myData.lists[i].imgSrc}" />
                             <span>${myData.lists[i].tips}</span>
                         </p>
                         <h3>${myData.lists[i].title}</h3>
+                         <h5>${myData.lists[i].star}</h5>
+                        <h5>${myData.lists[i].distance}</h5>
                         <div>${myData.lists[i].role.join(' | ')}</div>
                         <div>${myData.lists[i].description}</div>
                     </a>
@@ -75,4 +76,73 @@ function getAllBusiness(){
     },function (errorInfo) {
         alert("失败之后的业务处理逻辑");
     });
+}
+
+//列表检索
+function bisinessListIndex(myData){
+    console.log(myData)
+        if(!(oUl = document.querySelector('.businessList'))) return false;
+        let sStr = ``;
+        for (let i = 0; i < myData.lists.length; i++) {
+            sStr += `
+                <li>
+                    <a href="${myData.lists[i].url}">
+                        <p>
+                            <img src="${myData.lists[i].imgSrc}" />
+                            <span>${myData.lists[i].tips}</span>
+                        </p>
+                        <h3>${myData.lists[i].title}</h3>
+                        <h5>${myData.lists[i].star}</h5>
+                        <h5>${myData.lists[i].distance}</h5>
+                        <div>${myData.lists[i].role.join(' | ')}</div>
+                        <div>${myData.lists[i].description}</div>
+                    </a>
+                </li>
+            `;
+        }
+        oUl.innerHTML = sStr;
+    }
+
+function sortData() {
+        console.log(myData)
+}
+//获取首页
+function getTypes(){
+    getData("get","./data/types.json").then(function (myData) {
+        if(!(oUl = document.querySelector('.typeList'))) return false;
+        let sStr = ``;
+        for (let i = 0; i < myData.typeList.length; i++) {
+            sStr += `
+                <li data-href="./businessList.html">
+                    <a href="businessList.html">
+                        <img src="${myData.typeList[i].imgSrc}" />
+                        <div>${myData.typeList[i].title}</div>
+                    </a>
+                </li>
+            `;
+        }
+        //通过字符串拼接方式 渲染页面，好处时代码直观【模板字符串的作用】
+        //缺点：不是基于dom的，细节控制不够 dom代码过于冗余，方便绑定事件
+        oUl.innerHTML = sStr;
+    },function (errorInfo) {
+        alert("失败之后的业务处理逻辑");
+    });
+
+    //可以考虑使用
+    //let aLis= document.querySelectorAll('.typeList>li');
+    //for(let i=0;i<aLis.length,i++){
+        //aLis[i].onclick=function(event){
+           // console.log(123)
+        //}
+
+    //}
+    let  oUl =document.querySelector(".typeList");
+    oUl.onclick = function(event){
+        console.log(event.target);
+        gotoPage(event.target.getAttribute("data href"))
+        event.stopPropagation();
+        event.preventDefault();
+    }
+
+
 }
